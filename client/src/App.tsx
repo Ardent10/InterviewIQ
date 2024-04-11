@@ -15,7 +15,7 @@ function App() {
       <Route path="/signup" element={<Signup />} />
       <Route path="/" element={<Home />} />
       <Route path="/about-us" element={<AboutUs />} />
-      <Route path="/interviewer/:step" element={<Interviewer />} />
+      <Route path="/interviewer/:assessmentId" element={<Interviewer />} />
       <Route path="/forms" element={<Forms />}>
         <Route path="/forms/create/:id" element={<NewForm />} />
         <Route path="/forms/update/:id" element={<NewForm />} />

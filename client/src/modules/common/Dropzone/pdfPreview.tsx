@@ -57,6 +57,7 @@ export default function PdfPreview({
         transition="border-color 0.2s"
         _hover={{ borderColor: "indigo.500" }}
         display={"flex"}
+        flexDirection={"column"}
         justifyContent={"center"}
         alignItems={"center"}
       >

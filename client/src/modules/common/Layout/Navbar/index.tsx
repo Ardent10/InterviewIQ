@@ -37,7 +37,7 @@ const Links = [
   { label: "Overview", href: "#Overview" },
   { label: "How It Works", href: "#how_it_works" },
   { label: "Features", href: "#feature" },
-  { label: "Interviewer", href: "/interviewer" },
+  { label: "Interviewer", href: "/interviewer/assessment" },
   { label: "About Us", href: "/about-us" },
 ];
 

@@ -127,7 +127,7 @@ export function UploadImage({
     }
     setIsLoading(false);
   };
-  console.log(fileTaken);
+
   return (
     <Grid templateColumns="1fr" gap={4}>
       <Divider />
@@ -157,7 +157,7 @@ export function UploadImage({
               <Grid w={"full"} display={'flex'} justifyContent={'center'} alignItems={'center'}>
                 <PdfPreview
                   file={fileTaken[0]}
-                  handleRemoveFile={() => setFile([])}
+                  handleRemoveFile={() => removeImage(0)}
                 />
               </Grid>
             ) : (

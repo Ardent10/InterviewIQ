@@ -72,7 +72,7 @@ export const Forms = () => {
   const handleCopyLinkToClipboard = (e: Event, formId: string) => {
     e.stopPropagation();
     navigator.clipboard.writeText(
-      `${window.location.origin}/forms/forms-response/${formId}`
+      `${window.location.origin}/interviewer/${formId}`
     );
     toast({
       title: "Link Copied",
@@ -114,15 +114,17 @@ export const Forms = () => {
                   bgGradient="linear-gradient(to right, #8172fd, #c0afff)"
                   bgClip="text"
                 >
-                  Unique Design
+                  Software Engineer
                 </Text>
                 &nbsp; / Templates
               </Heading>
 
               <Text color={"gray.500"}>
-                Explore our extensive library of pre-built form templates or
-                unleash your creativity by crafting custom forms from scratch.
-                Simplify data collection with ease.
+                Explore our innovative collection of form templates designed to
+                streamline your interview process. Whether you're seeking
+                pre-built solutions or wish to unleash your creativity with
+                custom forms, InterviewIQ offers a diverse range of options.
+                Simplify data collection effortlessly.
               </Text>
 
               {state?.allForms === null ? (
@@ -195,7 +197,7 @@ export const Forms = () => {
                                   : template.form_title ===
                                     "Contact information"
                                   ? "/assets/templates/contact.png"
-                                  : "/assets/templates/party.png"
+                                  : "/assets/templates/bg.jpg"
                               }
                               borderRadius="10px"
                               h={"100%"}
@@ -236,7 +238,7 @@ export const Forms = () => {
                                   e.stopPropagation();
                                   setOpenModal(true);
                                   setSendFormUrl(
-                                    `${window.location.origin}/forms/forms-response/${template._id}`
+                                    `${window.location.origin}/interviewer/${template._id}`
                                   );
                                 }}
                               />
@@ -333,7 +335,7 @@ export const Forms = () => {
                                   e.stopPropagation();
                                   setOpenModal(true);
                                   setSendFormUrl(
-                                    `${window.location.origin}/forms/forms-response/${form._id}`
+                                    `${window.location.origin}/interviewer/${form._id}`
                                   );
                                 }}
                               />
