@@ -6,6 +6,7 @@ import { Home } from "@modules/home/page";
 import { Route, Routes } from "react-router-dom";
 import { SubmitFormResponse } from "@modules/forms/page/submitFormResponse";
 import { AboutUs } from "@modules/aboutUs/pages";
+import { Interviewer } from "@modules/Interviewer/pages";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Route path="/signup" element={<Signup />} />
       <Route path="/" element={<Home />} />
       <Route path="/about-us" element={<AboutUs />} />
+      <Route path="/interviewer/:step" element={<Interviewer />} />
       <Route path="/forms" element={<Forms />}>
         <Route path="/forms/create/:id" element={<NewForm />} />
         <Route path="/forms/update/:id" element={<NewForm />} />

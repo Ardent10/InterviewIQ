@@ -100,7 +100,7 @@ export function useAuth() {
 
         toast({
           title: "Logged In Successfully",
-          description: "Welcome to MercForms.",
+          description: "Welcome to InterviewIQ.",
           position: "bottom-right",
           status: "success",
           duration: 5000,

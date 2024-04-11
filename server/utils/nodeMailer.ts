@@ -36,7 +36,7 @@ const mailOptions = (
   html: string
 ): MailOptions => {
   return {
-    from: "MercForms developer@mercforms.noreply.com",
+    from: "InterviewIQ developer@interviewiq.noreply.com",
     to: email,
     subject: subject,
     text: text,

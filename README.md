@@ -1,25 +1,23 @@
-![InterviewIQ Logo](./merc-forms/public/banner.png)
+![InterviewIq](image.png)
 # InterviewIQ
 
-InterviewIQ is a dynamic form builder and data collection platform built with React, Node.js, MongoDB, and Express. It provides an intuitive user interface for creating and sharing forms, collecting responses, and more.
+InterviewIQ is a cutting-edge platform for conducting AI-powered interviews. Built with React, Node.js, MongoDB, and Express, InterviewIQ offers a seamless experience for crafting interviews, analyzing responses, and revolutionizing the hiring process.
 
 ## Features
 
-- **Dynamic Form Builder:** Easily create forms with various question types such as multiple-choice, paragraphs, and more.
-
-- **Form Sharing:** Share your forms with others and gather their responses.
-
-- **Image Embedding:** Enhance your forms by embedding images.
-
-- **User Responses:** View and analyze responses from users.
-
-- **Form Link Sharing:** Share form links for easy access.
-
-- **Form Invite via Email:** Send form invites via email to your contacts.
+- **Intelligent Interview Builder:** Craft customized interviews with a range of question types tailored to your hiring needs.
+  
+- **Resume Upload and Screening:** Effortlessly upload resumes and leverage AI to screen and shortlist candidates.
+  
+- **Dynamic Interviewer:** Let our AI interviewer dynamically generate questions based on resume data and job requirements.
+  
+- **Candidate Responses Analysis:** Analyze candidate responses in real-time with intuitive charts and data summaries.
+  
+- **User-Friendly Interface:** Enjoy a user-friendly interface designed to streamline the interview process from start to finish.
 
 ## Prerequisites
 
-Before you begin, ensure you have met the following requirements:
+Before you get started, ensure you have the following requirements:
 
 - Node.js and yarn installed.
 - MongoDB installed and running.
@@ -48,7 +46,7 @@ cd merc-forms
 yarn
 ```
 
-4. Create a `.env` file in both the `server` and `client` directories and add the following environment variables:
+4. Create a `.env` file in both the `backend` and `merc-forms` directories and add the following environment variables:
 
 ```env
 # Server .env
@@ -73,14 +71,14 @@ REACT_PUBLIC_API_BASE_URL=http://localhost:5000/api
 1. Start the server:
 
 ```bash
-cd server
+cd backend
 yarn dev
 ```
 
 2. Start the client:
 
 ```bash
-cd client
+cd merc-forms
 yarn dev
 ```
 

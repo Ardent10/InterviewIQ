@@ -45,8 +45,6 @@ export const ChoicesForm = ({
     name: `questions[${questionIndex}].choices`,
   });
 
-  console.log("uploadImageName", uploadImageName);
-
   const styles = Styles();
   const questionsList = watchAllFields.questions;
   return (

@@ -44,7 +44,7 @@ export function HowItWorks() {
             <iframe
               src="https://www.loom.com/embed/ed4946ae030c46b99486dc32d35b7ddf?sid=e4f075a7-59a5-4eed-a68a-ceae062eea65?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true"
               allowFullScreen
-              title="MercForms demo video"
+              title="InterviewIQ demo video"
               allow="autoplay; encrypted-media"
               style={{ borderRadius: "16px" }}
             />

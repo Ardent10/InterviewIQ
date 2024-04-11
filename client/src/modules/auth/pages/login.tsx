@@ -181,7 +181,7 @@ export function Login() {
         padding={4}
         backgroundColor="rgba(255, 255, 255, 0.7)"
       >
-        MercForms.
+        InterviewIQ.
       </Text>
     </Stack>
   );
