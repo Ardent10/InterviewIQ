@@ -36,9 +36,9 @@ export const Forms = () => {
   // Check if the current route is the Forms page ("/forms")
   const isFormsPage = location.pathname === "/forms";
   const templateFormName = [
-    "Event Registration Form",
-    "Contact Information",
-    "Party Invitation",
+    "Software Engineer Hiring | InterviewIQ",
+    "Database Management Systems",
+    "Structured Query Language (SQL)",
   ];
   const templateForms = state?.allForms?.filter((form: any) =>
     templateFormName.includes(form.form_title)

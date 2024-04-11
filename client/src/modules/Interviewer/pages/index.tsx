@@ -21,7 +21,6 @@ import { useForm } from "react-hook-form";
 
 export function Interviewer() {
   const [openModal, setOpenModal] = useState(false);
-  const [uploadImageName, setUploadImageName] = useState<any>(null);
   const { control, setValue } = useForm();
 
   return (
@@ -29,7 +28,7 @@ export function Interviewer() {
       <Container
         id="how_it_works"
         p={{ base: 3, lg: 16 }}
-        height={{ base: "auto", lg: "100vh" }}
+        height={{ base: "auto", lg: "auto" }}
         maxW={"full"}
         bgSize="contain"
         bgPosition="center"
@@ -39,8 +38,20 @@ export function Interviewer() {
       >
         <Stack>
           <Box flex="1" py={5} textAlign={"center"}>
-            <Heading fontWeight={500}>
-              Start your career with InterviewIQ working in
+            <Heading
+              display="flex"
+              justifyContent="center"
+              textAlign="center"
+              height={"10vh"}
+              fontSize={{ base: "3xl", sm: "4xl", md: "5xl", lg: "6xl" }}
+            >
+              <Text
+                bgGradient="linear-gradient(to right, #8172fd, #c0afff)"
+                bgClip="text"
+              >
+                Unique Design
+              </Text>
+              &nbsp; / Templates
             </Heading>
           </Box>
 
@@ -64,8 +75,9 @@ export function Interviewer() {
           </Tabs>
 
           <UploadImage
+            dropzoneText="Upload Your Resume (PDF Upto 6MB)"
             control={control}
-            name={uploadImageName ? uploadImageName : ""}
+            name={"resume"}
             setOpenModal={setOpenModal}
             setValue={setValue}
           />

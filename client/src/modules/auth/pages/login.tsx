@@ -27,7 +27,7 @@ export function Login() {
   const [state] = useAppState();
   const navigate = useNavigate();
   const defaultValues = {
-    email: "john@mercforms.com",
+    email: "david@interviewiq.com",
     password: "Test@123",
   };
 

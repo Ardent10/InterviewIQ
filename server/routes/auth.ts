@@ -3,7 +3,7 @@ import { Request, Response, Router } from "express";
 import jwt from "jsonwebtoken";
 import User from "../models/user";
 import FormModel from "../models/forms";
-import { templateForms } from "../utils/templateForms";
+import { sdeForm, sqlQueriesForm, dbmsForm } from "../utils/templateForms";
 
 const router: Router = Router();
 
@@ -50,9 +50,9 @@ router.post("/register", async (req: Request, res: Response) => {
       const savedUser = await newUser.save();
 
       const addtemplateForms = [
-        { ...templateForms[0], userId: savedUser._id },
-        { ...templateForms[1], userId: savedUser._id },
-        { ... templateForms[2], userId: savedUser._id },
+        { ...sdeForm, userId: savedUser._id },
+        { ...dbmsForm, userId: savedUser._id },
+        { ...sqlQueriesForm, userId: savedUser._id },
       ];
 
       await FormModel.insertMany(addtemplateForms);

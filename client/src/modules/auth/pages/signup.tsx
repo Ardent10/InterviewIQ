@@ -33,7 +33,7 @@ export function Signup() {
 
   const defaultValues = {
     username: "John.Doe",
-    email: "john@mercforms.com",
+    email: "david@interviewiq.com",
     password: "Test@123",
     confirm_password: "Test@123",
     location: "India",

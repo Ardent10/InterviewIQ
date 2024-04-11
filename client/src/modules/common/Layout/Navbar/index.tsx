@@ -37,6 +37,7 @@ const Links = [
   { label: "Overview", href: "#Overview" },
   { label: "How It Works", href: "#how_it_works" },
   { label: "Features", href: "#feature" },
+  { label: "Interviewer", href: "/interviewer" },
   { label: "About Us", href: "/about-us" },
 ];
 
@@ -102,14 +103,14 @@ export function Navbar() {
       isClosable: true,
     });
   };
-
+  const formUrl = `${window.location.origin}/forms/forms-response/${formId?formId:id}`;
   return (
     <>
       {openModal && (
         <SendFormLinkModal
           openModal={openModal}
           setOpenModal={setOpenModal}
-          formUrl={JSON.stringify(formId)}
+          formUrl={formUrl}
         />
       )}
 

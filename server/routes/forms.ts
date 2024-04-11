@@ -76,41 +76,41 @@ router.get("/getFormResponseById/:responseId", async (req, res) => {
 router.post("/form-invite", async (req, res) => {
   try {
     const { email, url, subject, message } = req.body;
-    console.log("email", url);
+    console.log("email", url, email);
     // Send the email asynchronously
-    // const sendEmail = async () => {
-    //   return new Promise((resolve, reject) => {
-    //     transporter.sendMail(
-    //       mailOptions(
-    //         email,
-    //         subject,
-    //         "invited",
-    //         SendFormInviteTemplate({
-    //           email: email,
-    //           url: url,
-    //           message: message,
-    //         })
-    //       ),
-    //       function (error, info) {
-    //         if (error) {
-    //           console.error("Error sending invite email:", error);
-    //           reject(error); // Reject the promise if there's an error
-    //         } else {
-    //           console.log("Email sent: " + info);
-    //           resolve(info); // Resolve the promise if email is sent successfully
-    //         }
-    //       }
-    //     );
-    //   });
-    // };
+    const sendEmail = async () => {
+      return new Promise((resolve, reject) => {
+        transporter.sendMail(
+          mailOptions(
+            email,
+            subject,
+            "invited",
+            SendFormInviteTemplate({
+              email: email,
+              url: url,
+              message: message,
+            })
+          ),
+          function (error, info) {
+            if (error) {
+              console.error("Error sending invite email:", error);
+              reject(error); // Reject the promise if there's an error
+            } else {
+              console.log("Email sent: " + info);
+              resolve(info); // Resolve the promise if email is sent successfully
+            }
+          }
+        );
+      });
+    };
 
     // Send the email and handle the response
-    // const emailResponse = await sendEmail();
+    const emailResponse = await sendEmail();
 
     // Send a response to the frontend
-    // res
-    //   .status(201)
-    //   .json({ message: "Email sent successfully", response: emailResponse });
+    res
+      .status(201)
+      .json({ message: "Email sent successfully", response: emailResponse });
   } catch (error) {
     console.error("Error sending invite email:", error);
     res.status(500).json({ error: "Could not send invite email" });

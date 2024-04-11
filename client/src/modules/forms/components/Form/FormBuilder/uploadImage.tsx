@@ -7,7 +7,8 @@ import {
   Text,
   useToast,
 } from "@chakra-ui/react";
-import { Dropzone} from "@modules/common";
+import { Dropzone } from "@modules/common";
+import PdfPreview from "@modules/common/Dropzone/pdfPreview";
 import { useRef, useState } from "react";
 import { FiEdit2 } from "react-icons/fi";
 import { GrFormClose } from "react-icons/gr";
@@ -17,6 +18,7 @@ interface props {
   name: string;
   setOpenModal: any;
   setValue: any;
+  dropzoneText?: string;
 }
 
 function ConvertImageToBase64(file: any) {
@@ -32,7 +34,13 @@ function ConvertImageToBase64(file: any) {
   });
 }
 
-export function UploadImage({ control, name, setOpenModal, setValue }: props) {
+export function UploadImage({
+  control,
+  name,
+  setOpenModal,
+  setValue,
+  dropzoneText,
+}: props) {
   const [selectedFilePath, setSelectedFilePath] = useState<string[]>([]);
   const [fileSizeErrorMsg, setFileSizeErrorMsg] = useState<string>("");
   const [fileTaken, setFile] = useState<File[]>([]);
@@ -119,7 +127,7 @@ export function UploadImage({ control, name, setOpenModal, setValue }: props) {
     }
     setIsLoading(false);
   };
-  console.log("IMAGE UPLOAD NAME: ",name);
+  console.log(fileTaken);
   return (
     <Grid templateColumns="1fr" gap={4}>
       <Divider />
@@ -130,10 +138,11 @@ export function UploadImage({ control, name, setOpenModal, setValue }: props) {
           </Box>
         )}
         <form>
-          <Box display="flex" flexDirection="column" p={3}>
+          <Box display="flex" h={"full"} flexDirection="column" p={3}>
             {selectedFilePath[0] === undefined && (
               <Grid rowGap={2} p={3}>
                 <Dropzone
+                  dropzoneText={dropzoneText}
                   control={control}
                   name={name}
                   setDragAndDropFiles={(files: any) => {
@@ -143,7 +152,15 @@ export function UploadImage({ control, name, setOpenModal, setValue }: props) {
               </Grid>
             )}
 
-            {selectedFilePath.length !== 0 && (
+            {selectedFilePath?.length !== 0 &&
+            fileTaken[0]?.type === "application/pdf" ? (
+              <Grid w={"full"} display={'flex'} justifyContent={'center'} alignItems={'center'}>
+                <PdfPreview
+                  file={fileTaken[0]}
+                  handleRemoveFile={() => setFile([])}
+                />
+              </Grid>
+            ) : (
               <Grid w={"full"}>
                 {fileTaken.map((file, index) => (
                   <Box
