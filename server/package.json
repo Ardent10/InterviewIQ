@@ -1,0 +1,33 @@
+{
+  "name": "interview-iq-server",
+  "version": "1.0.0",
+  "main": "server.ts",
+  "author": "Zakariya",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "dev": "nodemon server.ts"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.1",
+    "mongodb": "^5.6.0",
+    "mongoose": "^7.3.1",
+    "nodemailer": "^6.9.4",
+    "nodemon": "^2.0.22",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.6"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.2",
+    "@types/cookie-parser": "^1.4.3",
+    "@types/cors": "^2.8.13",
+    "@types/express": "^4.17.17",
+    "@types/jsonwebtoken": "^9.0.2",
+    "@types/node": "^20.4.0",
+    "@types/nodemailer": "^6.4.9"
+  }
+}
