@@ -3,4 +3,5 @@ export const initialState = {
   isLoading: false,
   allForms: null,
   allFormsResponses: null,
+  promptResult:[]
 };

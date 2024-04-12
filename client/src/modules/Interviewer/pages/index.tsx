@@ -40,7 +40,7 @@ export function Interviewer() {
         justifyContent={"center"}
         alignItems={"center"}
       >
-        <Stack>
+        <Stack w={"100%"}>
           <Box flex="1" py={5} textAlign={"center"}>
             <Heading
               display="flex"

@@ -3,12 +3,14 @@ import {
   Box,
   Button,
   Center,
+  IconButton,
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
 import { SpeechToText } from "../speechToText";
 import { useState } from "react";
 import Webcam from "react-webcam";
+import { useAIModels } from "@modules/Interviewer/hooks";
 
 export function AiInterviewer() {
   const [webcamPermission, setWebcamPermission] = useState(false);
@@ -58,6 +60,7 @@ export function AiInterviewer() {
           </Box>
         </AspectRatio>
       )}
+
       <SpeechToText webcamPermission={webcamPermission} />
     </Center>
   );

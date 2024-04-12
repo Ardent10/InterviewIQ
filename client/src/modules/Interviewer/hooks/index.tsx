@@ -5,7 +5,7 @@ import { useState } from "react";
 export function useAIModels() {
   const [state, dispatch] = useAppState();
   const [loading, setLoading] = useState<boolean>(false);
-  const OPENAI_API_KEY = import.meta.env.VITE_OPENAI_API_KEY;
+
   const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
 
   const genAI = new GoogleGenerativeAI(GEMINI_API_KEY);
@@ -22,12 +22,11 @@ export function useAIModels() {
 
         dispatch({
           type: "setPromptResult",
-          payload: {
-            text: text,
-          },
+          payload: [...state.promptResult, { prompt: prompt, result: text }],
         });
         setLoading(false);
       }
+      return text;
     } catch (error) {
       dispatch({
         type: "setToggleSnackbar",

@@ -11,6 +11,12 @@ type Action = {
 const globalReducers = (state: State, action: Action) => {
   const { type } = action;
   switch (type) {
+    case "setPromptResult": {
+      return {
+        ...state,
+        promptResult: action.payload,
+      };
+    }
     case "setUserProfile": {
       return {
         ...state,
